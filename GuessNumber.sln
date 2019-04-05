@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessNumber", "GuessNumber\GuessNumber.csproj", "{AD30FAE1-643A-4D39-A298-4690A09E8E82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Dal\Dal.csproj", "{86EC567E-387E-43D0-841A-B657CA48A819}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD30FAE1-643A-4D39-A298-4690A09E8E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD30FAE1-643A-4D39-A298-4690A09E8E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD30FAE1-643A-4D39-A298-4690A09E8E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD30FAE1-643A-4D39-A298-4690A09E8E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86EC567E-387E-43D0-841A-B657CA48A819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86EC567E-387E-43D0-841A-B657CA48A819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86EC567E-387E-43D0-841A-B657CA48A819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86EC567E-387E-43D0-841A-B657CA48A819}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42899A97-C86B-4C84-8779-D7EF0EB0AD6F}
+	EndGlobalSection
+EndGlobal

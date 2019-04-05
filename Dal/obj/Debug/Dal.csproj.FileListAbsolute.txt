@@ -1,0 +1,10 @@
+C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Dal.dll
+C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Dal.pdb
+C:\Users\mikci\source\repos\GuessNumber\Dal\obj\Debug\Dal.csprojAssemblyReference.cache
+C:\Users\mikci\source\repos\GuessNumber\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+C:\Users\mikci\source\repos\GuessNumber\Dal\obj\Debug\Dal.dll
+C:\Users\mikci\source\repos\GuessNumber\Dal\obj\Debug\Dal.pdb
+C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mikci\source\repos\GuessNumber\Dal\obj\Debug\Dal.csproj.CopyComplete
