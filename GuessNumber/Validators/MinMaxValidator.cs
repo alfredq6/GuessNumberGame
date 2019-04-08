@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace GuessNumber
 {
-    public class Validator
+    public class MinMaxValidator
     {
         public int? minValue = null;
         public int? maxValue = null;
 
-        public Validator(int _minValue, int _maxValue)
+        public MinMaxValidator(int _minValue, int _maxValue)
         {
             minValue = _minValue;
             maxValue = _maxValue;
         }
 
-        public Validator() { }
+        public MinMaxValidator() { }
 
         public string Error { get; set; }
 

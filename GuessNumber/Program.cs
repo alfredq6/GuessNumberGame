@@ -1,5 +1,6 @@
 ﻿using Dal.Model;
 using Dal.Repository;
+using GuessNumber.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,20 @@ namespace GuessNumber
 {
     class Program
     {
+        enum UserMenuChoice
+        {
+            Exit = 0,
+            PlayWithAnotherPlayer = 1,
+            PlayWithComputer = 2
+        }
+
+        enum UserLevelChoice
+        {
+            Easy = 1,
+            Medium = 2,
+            Hard = 3
+        }
+
         static void Main(string[] args)
         {
             var gamerRepos = new GamerRepository();
@@ -34,43 +49,37 @@ namespace GuessNumber
                 Console.WriteLine("1 - Play with another player");
                 Console.WriteLine("2 - Play with computer");
                 Console.WriteLine("0 - Exit");
-                int choice;
-                var line = Console.ReadLine();
-                if (!int.TryParse(line, out choice))
-                    choice = -1;
+                UserMenuChoice choice = (UserMenuChoice)NumberValidator.ConvertStringToNumber();
 
                 switch (choice)
                 {
-                    case 1:
+                    case UserMenuChoice.PlayWithAnotherPlayer:
                         {
                             Console.Clear();
                             game = new GameVersusPlayer();
                             break;
                         }
-                    case 2:
+                    case UserMenuChoice.PlayWithComputer:
                         {
                             Console.Clear();
                             Console.WriteLine("1 - Easy level");
                             Console.WriteLine("2 - Medium level");
                             Console.WriteLine("3 - Hard level");
+                            UserLevelChoice choiceLevel = (UserLevelChoice)NumberValidator.ConvertStringToNumber();
 
-                            line = Console.ReadLine();
-                            if (!int.TryParse(line, out choice))
-                                choice = -1;
-
-                            switch (choice)
+                            switch (choiceLevel)
                             {
-                                case 1:
+                                case UserLevelChoice.Easy:
                                     {
                                         game = new EasyLevelGame();
                                         break;
                                     }
-                                case 2:
+                                case UserLevelChoice.Medium:
                                     {
                                         game = new MediumLevelGame();
                                         break;
                                     }
-                                case 3:
+                                case UserLevelChoice.Hard:
                                     {
                                         game = new HardLevelGame();
                                         break;
@@ -79,12 +88,12 @@ namespace GuessNumber
                             }
                             break;
                         }
-                    case 0: return;
+                    case UserMenuChoice.Exit: return;
                     default: break;
                 }
                 if (game != null)
                 {
-                    game.SetGamer = (Gamer)gamer;
+                    game.Gamer = gamer;
                     game.Play();
                     gamerRepos.Save(gamer);
                 }

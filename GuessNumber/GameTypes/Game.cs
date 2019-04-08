@@ -1,4 +1,5 @@
 ﻿using Dal.Model;
+using GuessNumber.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,29 +17,17 @@ namespace GuessNumber
         protected int GuessingNumber { get; set; }
         protected int GuessingPlayerNumber { get; set; }
         protected bool IsWin { get; set; } = false;
-        protected Validator validator { get; set; }
-        public Gamer gamer { get; set; }
+        protected MinMaxValidator validator { get; set; }
+        public Gamer Gamer { get; set; }
 
         public abstract void Play();
-
-        public Gamer SetGamer
-        {
-            get
-            {
-                return gamer;
-            }
-            set
-            {
-                gamer = value;
-            }
-        }
 
         protected void EndGameActions()
         {
             if (IsWin)
             {
-                gamer.Score += MaxAttempt - Attempt + 1;
-                Console.WriteLine($"Congratulation {gamer.Name}! Your score is {gamer.Score}");
+                Gamer.Score += MaxAttempt - Attempt + 1;
+                Console.WriteLine($"Congratulation {Gamer.Name}! Your score is {Gamer.Score}");
                 
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
@@ -56,13 +45,13 @@ namespace GuessNumber
             Console.WriteLine("Guessing player, press any key to start...");
             Console.ReadKey();
             Console.WriteLine("Try guess a number!");
-            validator = new Validator(Min, Max);
+            validator = new MinMaxValidator(Min, Max);
 
             MaxAttempt = GetMaxAttempt(Min, Max);
             do
             {
                 Console.WriteLine($"Min value is {Min} and max is {Max}");
-                GuessingPlayerNumber = GetNumber();
+                GuessingPlayerNumber = NumberValidator.ConvertStringToNumber(validator);
 
                 if (GuessingPlayerNumber > GuessingNumber)
                 {
@@ -88,27 +77,6 @@ namespace GuessNumber
         protected int GetMaxAttempt(int _min, int _max)
         {
             return (int)Math.Round(Math.Log(_max - _min, 2), 0) + 1;
-        }
-
-        protected int GetNumber(Validator validator = null)
-        {
-            var line = Console.ReadLine();
-            int num;
-            do
-            {
-                if (!string.IsNullOrEmpty(validator?.Error))
-                {
-                    Console.WriteLine(validator.Error);
-                    line = Console.ReadLine();
-                }
-
-                while (!int.TryParse(line, out num))
-                {
-                    Console.WriteLine("Please, enter an INTEGER NUMBER");
-                    line = Console.ReadLine();
-                }
-            } while (!validator?.IsValid(num) ?? false);
-            return num;
         }
 
     }

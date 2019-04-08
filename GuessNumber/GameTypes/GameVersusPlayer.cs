@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GuessNumber.Validators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,18 +21,18 @@ namespace GuessNumber
         
         private void FirstPlayerActions()
         {
-            validator = new Validator();
+            validator = new MinMaxValidator();
 
             Console.WriteLine("First player, Enter min value");
-            validator.minValue = GetNumber(validator);
+            validator.minValue = NumberValidator.ConvertStringToNumber(validator);
             Min = (int)validator.minValue;
 
             Console.WriteLine("Enter max value");
-            validator.maxValue = GetNumber(validator);
+            validator.maxValue = NumberValidator.ConvertStringToNumber(validator);
             Max = (int)validator.maxValue;
 
             Console.WriteLine("Enter the guessing number");
-            GuessingNumber = GetNumber(validator);
+            GuessingNumber = NumberValidator.ConvertStringToNumber(validator);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
