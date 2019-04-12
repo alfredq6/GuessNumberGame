@@ -1,5 +1,7 @@
 ﻿using Dal.Model;
+using Dal.Repository;
 using GuessNumber.Validators;
+using GuessNumber.GameMenu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,37 @@ namespace GuessNumber
         protected bool IsWin { get; set; } = false;
         protected MinMaxValidator validator { get; set; }
         public Gamer Gamer { get; set; }
+
+        public static void Start()
+        {
+            var gamerRepos = new GamerRepository();
+            var gamer = gamerRepos.Get(1);
+
+            if (gamer == null)
+            {
+                gamer = new Gamer
+                {
+                    Id = 1,
+                    Name = "Nobody",
+                    Score = 0
+                };
+            }
+
+            Game game = null;
+            bool exit = false;
+
+            do
+            {
+                Menu.StartMainMenu(ref game, ref exit);
+
+                if (game != null && !exit)
+                {
+                    game.Gamer = gamer;
+                    game.Play();
+                    gamerRepos.Save(game.Gamer);
+                }
+            } while (!exit);
+        }
 
         public abstract void Play();
 
@@ -45,11 +78,11 @@ namespace GuessNumber
             Console.WriteLine("Guessing player, press any key to start...");
             Console.ReadKey();
             Console.WriteLine("Try guess a number!");
-            validator = new MinMaxValidator(Min, Max);
 
             MaxAttempt = GetMaxAttempt(Min, Max);
             do
             {
+                validator = new MinMaxValidator(Min, Max);
                 Console.WriteLine($"Min value is {Min} and max is {Max}");
                 GuessingPlayerNumber = NumberValidator.ConvertStringToNumber(validator);
 

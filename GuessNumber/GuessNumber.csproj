@@ -49,6 +49,9 @@
     <Compile Include="GameTypes\GameVersusPlayer.cs" />
     <Compile Include="GameTypes\Levels\HardLevelGame.cs" />
     <Compile Include="GameTypes\Levels\MediumLevelGame.cs" />
+    <Compile Include="GameMenu\Menu.cs" />
+    <Compile Include="GameMenu\UserChoices\UserGameTypeChoice.cs" />
+    <Compile Include="GameMenu\UserChoices\UserLevelChoice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\NumberValidator.cs" />

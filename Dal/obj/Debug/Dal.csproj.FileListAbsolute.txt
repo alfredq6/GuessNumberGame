@@ -8,3 +8,13 @@ C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\mikci\source\repos\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mikci\source\repos\GuessNumber\Dal\obj\Debug\Dal.csproj.CopyComplete
+D:\oop\fancyCalcc\GuessNumber\Dal\bin\Debug\Dal.dll
+D:\oop\fancyCalcc\GuessNumber\Dal\bin\Debug\Dal.pdb
+D:\oop\fancyCalcc\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.dll
+D:\oop\fancyCalcc\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.pdb
+D:\oop\fancyCalcc\GuessNumber\Dal\bin\Debug\Newtonsoft.Json.xml
+D:\oop\fancyCalcc\GuessNumber\Dal\obj\Debug\Dal.csprojAssemblyReference.cache
+D:\oop\fancyCalcc\GuessNumber\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+D:\oop\fancyCalcc\GuessNumber\Dal\obj\Debug\Dal.csproj.CopyComplete
+D:\oop\fancyCalcc\GuessNumber\Dal\obj\Debug\Dal.dll
+D:\oop\fancyCalcc\GuessNumber\Dal\obj\Debug\Dal.pdb
