@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GuessNumber.GameTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GuessNumber
 {
-    class MediumLevelGame : GameVersusComputer
+    public class MediumLevelGame : GameVersusComputer
     {
         public MediumLevelGame()
         {

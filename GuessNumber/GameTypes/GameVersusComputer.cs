@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuessNumber
+namespace GuessNumber.GameTypes
 {
-    abstract class GameVersusComputer : Game
+    public abstract class GameVersusComputer : Game
     {
-
         public override void Play()
         {
             GuessingPlayerActions();
@@ -16,8 +15,12 @@ namespace GuessNumber
             EndGameActions();
         }
 
-        protected int GetRandomNumber(int _min, int _max)
+        public int? GetRandomNumber(int _min, int _max)
         {
+            if (_min >= _max)
+            {
+                return null;
+            }
             Random rand = new Random();
             var randomNumber = rand.Next(_min + 1, _max - 1);
 

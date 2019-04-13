@@ -1,5 +1,6 @@
 ﻿using Dal.Model;
 using Dal.Repository;
+using GuessNumber.GameTypes;
 using GuessNumber.UserChoices;
 using GuessNumber.Validators;
 using System;
@@ -16,9 +17,9 @@ namespace GuessNumber.GameMenu
         public static void StartLevelMenu(ref Game game)
         {
             Console.Clear();
-            Console.WriteLine("1 - Easy level");
-            Console.WriteLine("2 - Medium level");
-            Console.WriteLine("3 - Hard level");
+            Console.WriteLine($"{(int)UserLevelChoice.Easy} - Easy level");
+            Console.WriteLine($"{(int)UserLevelChoice.Medium} - Medium level");
+            Console.WriteLine($"{(int)UserLevelChoice.Hard} - Hard level");
             UserLevelChoice choiceLevel = (UserLevelChoice)NumberValidator.ConvertStringToNumber();
 
             switch (choiceLevel)
@@ -46,9 +47,10 @@ namespace GuessNumber.GameMenu
         {
             Console.Clear();
             Console.WriteLine("Menu:");
-            Console.WriteLine("1 - Play with another player");
-            Console.WriteLine("2 - Play with computer");
-            Console.WriteLine("0 - Exit");
+            Console.WriteLine($"{(int)UserGameTypeChoice.PlayWithAnotherPlayer} - Play with another player");
+            Console.WriteLine($"{(int)UserGameTypeChoice.PlayWithComputer} - Play with computer");
+            Console.WriteLine($"{(int)UserGameTypeChoice.Exit} - Exit");
+
             UserGameTypeChoice choice = (UserGameTypeChoice)NumberValidator.ConvertStringToNumber();
 
             switch (choice)

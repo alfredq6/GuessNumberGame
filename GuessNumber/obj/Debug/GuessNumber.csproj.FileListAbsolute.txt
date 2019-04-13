@@ -24,3 +24,12 @@ D:\oop\fancyCalcc\GuessNumber\GuessNumber\obj\Debug\GuessNumber.csproj.CoreCompi
 D:\oop\fancyCalcc\GuessNumber\GuessNumber\obj\Debug\GuessNumber.csproj.CopyComplete
 D:\oop\fancyCalcc\GuessNumber\GuessNumber\obj\Debug\GuessNumber.exe
 D:\oop\fancyCalcc\GuessNumber\GuessNumber\obj\Debug\GuessNumber.pdb
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\Castle.Core.dll
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\Moq.dll
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\Castle.Core.xml
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\Moq.pdb
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\Moq.xml
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\oop\fancyCalcc\GuessNumber\GuessNumber\bin\Debug\System.Threading.Tasks.Extensions.xml

@@ -8,38 +8,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuessNumber
+namespace GuessNumber.GameTypes
 {
     public abstract class Game
     {
-        protected int Min { get; set; }
-        protected int Max { get; set; }
+        public int Min { get; set; }
+        public int Max { get; set; }
         protected int Attempt { get; set; }
-        protected int MaxAttempt { get; set; }
-        protected int GuessingNumber { get; set; }
+        protected int? MaxAttempt { get; set; }
+        protected int? GuessingNumber { get; set; }
         protected int GuessingPlayerNumber { get; set; }
         protected bool IsWin { get; set; } = false;
         protected MinMaxValidator validator { get; set; }
+        public static GamerRepository gamerRepos;
+        public static Gamer gamer;
+        private static Game game;
+        private static bool exit;
         public Gamer Gamer { get; set; }
 
-        public static void Start()
+        public static void Setup()
         {
-            var gamerRepos = new GamerRepository();
-            var gamer = gamerRepos.Get(1);
+            gamerRepos = new GamerRepository();
+            gamer = gamerRepos.Get(1);
 
             if (gamer == null)
             {
                 gamer = new Gamer
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Nobody",
                     Score = 0
                 };
             }
 
-            Game game = null;
-            bool exit = false;
+            game = null;
+            exit = false;
+        }
 
+        public static void Start()
+        {
+            Setup();
             do
             {
                 Menu.StartMainMenu(ref game, ref exit);
@@ -59,7 +67,7 @@ namespace GuessNumber
         {
             if (IsWin)
             {
-                Gamer.Score += MaxAttempt - Attempt + 1;
+                Gamer.Score += (int)MaxAttempt - Attempt + 1;
                 Console.WriteLine($"Congratulation {Gamer.Name}! Your score is {Gamer.Score}");
                 
                 Console.WriteLine("Press any key to continue...");
@@ -107,9 +115,9 @@ namespace GuessNumber
         }
 
 
-        protected int GetMaxAttempt(int _min, int _max)
+        public int? GetMaxAttempt(int _min, int _max)
         {
-            return (int)Math.Round(Math.Log(_max - _min, 2), 0) + 1;
+            return _min < _max ? ((int?)Math.Round(Math.Log(_max - _min, 2), 0) + 1) : null;
         }
 
     }

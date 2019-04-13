@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuessNumber
+namespace GuessNumber.GameTypes
 {
     public class GameVersusPlayer : Game
     {
